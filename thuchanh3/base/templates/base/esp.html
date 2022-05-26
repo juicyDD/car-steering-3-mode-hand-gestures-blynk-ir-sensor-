@@ -1,0 +1,31 @@
+<!DOCTYPE html> {%load static %}
+
+<html lang="en">
+<style>
+    .home-page {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles/style.css'%}">
+    <title>Stream</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{% static 'scripts/steering_card.js' %}"></script>
+</head>
+
+<body>
+    <div class="home-page">
+        <div>
+            <h1>blackpink in your area</h1>
+            <img src="{% url 'video-feed' %}" alt="">
+        </div>
+        <div id="mycard" name="mycard">
+            {% include 'base/steering_card.html' %}
+        </div>
+    </div>
+</body>
+
+</html>
